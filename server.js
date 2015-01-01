@@ -36,18 +36,15 @@ http.createServer(function (req, res) {
 				//var decodedBody = querystring.parse(fullBody);
 				 
 				// output the decoded data to the HTTP response
-				res.write('<html><head><title>Post data</title></head><body><pre>');
-				//res.write(util.inspect(fullBody));
-				res.write('yo');
-				res.write('</pre></body></html>');
-				//console.log(fullBody);
-				//console.log(address_string); 
+				res.write('Success');
+
 				res.end();
 			});
 		} else {
 			console.log("[405] " + req.method + " to " + req.url);
 			res.writeHead(405, "Method not supported", {'Content-Type': 'text/html'});
-			res.end('<html><head><title>405 - Method not supported</title></head><body><h1>Method not supported.</h1></body></html>');
+			res.write('405 Method Not Supported');
+			res.end();
 		} 
 	break;
 	default:
