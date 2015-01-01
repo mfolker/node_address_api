@@ -18,7 +18,7 @@ http.createServer(function (req, res) {
 						
 			req.on('data', function(chunk) {
 			
-				// These functions need binding to event emitters as JS is non blocking.
+				// These functions need binding to event emitters to be non blocking.
 				address_string += addstr(chunk); 
 				var google_data = submitter(address_string);
 
@@ -29,13 +29,9 @@ http.createServer(function (req, res) {
 			});
 
 			req.on('end', function() {
-				// request ended -> do something with the data
 
 				res.writeHead(200, "OK", {'Content-Type': 'text/html'});
-				// parse the received body data
-				//var decodedBody = querystring.parse(fullBody);
-				 
-				// output the decoded data to the HTTP response
+
 				res.write('Success');
 
 				res.end();
