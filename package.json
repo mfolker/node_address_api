@@ -1,0 +1,8 @@
+{
+  "name": "googlegeocode",
+  "main": "server.js",
+  "dependencies": {
+    "mongoose": "^3.8.21",
+    "node-geocoder": "2.12.1"
+  }
+}
